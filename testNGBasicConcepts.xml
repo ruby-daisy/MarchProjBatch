@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="BasicSuite" parallel="tests">
+  <test thread-count="5" name="BasicTest1">  
+  <parameter name="user" value="daisyruby"></parameter>
+  <parameter name="pass" value="test@23"></parameter>
+  <parameter name="browser" value="chrome"></parameter>  
+  <groups>
+  <run>
+  <include name="crossbrowser"></include>
+  </run>
+  </groups> 
+    <classes>
+      <class name="BasicConcepts.SampleTestNG">  
+      <methods>
+     <exclude name="login"></exclude>  
+      </methods>      
+       </class>         
+      <class name="BasicConcepts.SampleTestNG2">
+      <methods>
+      <include name="Test1"></include>
+      <include name="Test4"></include>     
+      </methods>      
+       </class>      
+    </classes>
+  </test> <!-- BasicTest --> 
+  
+  
+  <test thread-count="5" name="BasicTest2" >
+  <parameter name="user" value="emyHepzibah"></parameter>
+  <parameter name="pass" value="test@13"></parameter>
+  <parameter name="browser" value="edge"></parameter> 
+  <groups>
+  <run>
+  <include name="crossbrowser"></include>
+  </run>
+  </groups>  
+    <classes>
+      <class name="BasicConcepts.SampleTestNG"/>             
+      <class name="BasicConcepts.SampleTestNG2">
+      <methods>
+      <include name="Test1"></include>
+      <include name="Test4"></include>     
+      </methods>      
+       </class>      
+    </classes>
+  </test> <!-- BasicTest --> 
+  
+</suite> <!-- BasicSuite -->
